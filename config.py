@@ -9,7 +9,6 @@ sending_error = "Sorry error sending the reply.\nError: "
 successful_reply = "The reply was sent successfully."
 sending_error_2 = "Sorry... Something went wrong.\n Error: "
 successful_sent = "Thank you! I sent your message to our feedback team. They will reply you soon."
-check git = "Nothing"
 
 def isAdmin(message):
 	if secret.adminchat_id == str(message.chat.id):

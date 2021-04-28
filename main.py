@@ -1,8 +1,9 @@
 import telebot
 import config
 import secret
+import re
 
-bot = telebot.TeleBot(config.TOKEN, parse_mode=None)
+bot = telebot.TeleBot(secret.TOKEN, parse_mode=None)
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -32,7 +33,7 @@ def text_mess(message):
 					pass
 	else:
 		try:
-			bot.send_message(config.adminchat_id, str(message.chat.id) + "\n" + message.text)
+			bot.send_message(secret.adminchat_id, str(message.chat.id) + "\n" + message.text)
 		except Exception as e:
 			bot.reply_to(message, config.sending_error_2 + str(e))
 		else:
